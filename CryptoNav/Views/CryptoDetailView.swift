@@ -16,11 +16,15 @@ struct CryptoDetailView: View {
                 CryptoPriceRow(cryptoPrice: cryptoPrice)
             }
             Section("Operations") {
-                HStack {
-                    Spacer()
-                    Text("+ Buy")
-                        .foregroundColor(.blue)
-                    Spacer()
+                NavigationLink {
+                    CryptoExchangeView(cryptoPrice: cryptoPrice)
+                } label: {
+                    HStack {
+                        Spacer()
+                        Text("+ Buy")
+                            .foregroundColor(.blue)
+                        Spacer()
+                    }
                 }
             }
         }

@@ -12,7 +12,11 @@ struct CryptoListView: View {
         List {
             Section("CryptoCurrencies") {
                 ForEach(cryptoPrices) { cryptoPrice in
-                    CryptoPriceRow(cryptoPrice: cryptoPrice)
+                    NavigationLink {
+                        CryptoDetailView(cryptoPrice: cryptoPrice)
+                    } label: {
+                        CryptoPriceRow(cryptoPrice: cryptoPrice)
+                    }
                 }
             }
         }
